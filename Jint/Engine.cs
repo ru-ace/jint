@@ -35,7 +35,7 @@ namespace Jint
         private JsValue _completionValue = JsValue.Undefined;
         private int _statementsCount;
         private long _timeoutTicks;
-        private SyntaxNode _lastSyntaxNode = null;
+        protected SyntaxNode _lastSyntaxNode = null;
 
         public ITypeConverter ClrTypeConverter;
 
@@ -426,7 +426,7 @@ namespace Jint
             }
         }
 
-        public object EvaluateExpression(Expression expression)
+        public virtual object EvaluateExpression(Expression expression)
         {
             _lastSyntaxNode = expression;
 
